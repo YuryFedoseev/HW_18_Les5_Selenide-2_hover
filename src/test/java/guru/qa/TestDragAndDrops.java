@@ -32,14 +32,13 @@ public class TestDragAndDrops {
     @Test
     public void dragAndDropsWithAction() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
-        //SelenideElement element = $("#column-a");
-        //actions().dragAndDropBy(element, xOffset, yOffset).perform();
+        SelenideElement element = $("#column-a");
+        actions().dragAndDropBy(element, xOffset, yOffset).perform();
         SelenideElement elementA = $("#column-a");
         SelenideElement elementB = $("#column-b");
-        //actions().contextClick(elementA).moveToElement(elementB);
-        actions().dragAndDrop(elementA,elementB);
-        //$("#column-b").shouldHave(text("A"));
-
+        actions().contextClick(elementA).moveToElement(elementB);
+        actions().dragAndDrop(elementA, elementB);
+        $("#column-b").shouldHave(text("A"));
 
     }
 }
